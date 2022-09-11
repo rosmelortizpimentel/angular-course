@@ -1,0 +1,23 @@
+<section>
+    <h1>Listado de Herores</h1>
+    <ol>
+        <li *ngFor="let heroe of heroes">{{heroe}}</li>
+    </ol>
+    <button *ngIf="heroes.length>0" mat-raised-button color="warn" (click)="borrarHerroe()">
+        Borrar Heroe
+    </button>
+</section>
+
+<section *ngIf="heroeBorrado.length>0; else noBorrado">
+    <p>Se eliminó: <strong class="delete">{{heroeBorrado}}</strong></p>
+    <p>Historial de borrados:</p>
+    <ol class="delete">
+        <li *ngFor="let heroe of heroesBorrados">{{heroe}}</li>
+    </ol>
+</section>
+
+<ng-template #noBorrado>
+    <section>
+        <p>No se ha borrado nada.</p>
+    </section>
+</ng-template>

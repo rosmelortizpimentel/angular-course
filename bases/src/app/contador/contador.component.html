@@ -1,0 +1,11 @@
+<h1>{{ title }}</h1>
+<section>
+    <h3>Base: {{ base }}</h3>
+    <button mat-fab color="primary" (click)="acumular(base)">
+        + {{ base }}
+    </button>
+    <strong>{{ numero }}</strong>
+    <button mat-fab color="warn" (click)="acumular(-base)">
+        - {{ base }}
+    </button>
+</section>
